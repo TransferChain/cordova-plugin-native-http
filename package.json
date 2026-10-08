@@ -1,0 +1,14 @@
+{
+  "name": "cordova-plugin-native-http",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TransferChain native HTTPS with per-request SHA-256 pinning",
+  "license": "MIT",
+  "cordova": {
+    "id": "cordova-plugin-native-http",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  }
+}

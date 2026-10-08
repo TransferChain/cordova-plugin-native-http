@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-native-http" version="1.0.0">
+    <name>UltraHTTP</name>
+    <description>Native HTTPS transport with optional request-owned SHA-256 pins.</description>
+    <license>MIT</license>
+    <js-module src="www/UltraHTTP.js" name="UltraHTTP" />
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="UltraHTTP">
+                <param name="android-package" value="com.transferchain.http.UltraHTTP" />
+            </feature>
+        </config-file>
+        <source-file src="src/android/UltraHTTP.java" target-dir="src/com/transferchain/http" />
+        <source-file src="src/android/PinnedTrustManager.java" target-dir="src/com/transferchain/http" />
+        <source-file src="src/android/FingerprintMatcher.java" target-dir="src/com/transferchain/http" />
+    </platform>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="UltraHTTP">
+                <param name="ios-package" value="UltraHTTP" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/UltraHTTP.swift" />
+        <source-file src="src/ios/CertificatePins.swift" />
+        <framework src="Security.framework" />
+        <framework src="CryptoKit.framework" />
+    </platform>
+</plugin>
